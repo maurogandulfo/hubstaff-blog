@@ -55,3 +55,9 @@
 html {
     font-family: "Ubuntu";
 }
+
+.wrapper {
+	max-width: 1460px;
+	margin-left: auto;
+	margin-right: auto;
+}

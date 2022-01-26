@@ -8,6 +8,6 @@
 
 <style lang="scss">
 .body {
-  padding-top: 118px;
+  padding-top: 145px;
 }
 </style>

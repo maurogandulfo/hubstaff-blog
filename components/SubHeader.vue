@@ -27,16 +27,16 @@
 export default {
   data() {
     return {
-      visible: false,
+      visible: true,
     };
   },
   methods: {
     handleScroll: function () {
       if (window.scrollY === 0) {
-        this.visible = false;
+        this.visible = true;
         return;
       }
-      this.visible = true;
+      this.visible = false;
     },
   },
   mounted() {
