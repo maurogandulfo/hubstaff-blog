@@ -1,11 +1,16 @@
 <template>
-  <Tutorial/>
+  <div class="header">
+    <img src="~assets/217-536x354.jpg" />
+    <FeaturedPost> </FeaturedPost>
+    test
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import FeaturedPost from "~/components/FeaturedPost";
 
-export default Vue.extend({
-  name: 'IndexPage'
-})
+export default {
+  name: "IndexPage",
+  components: { FeaturedPost },
+};
 </script>
