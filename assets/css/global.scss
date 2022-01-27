@@ -54,12 +54,26 @@
 
 html {
     font-family: "Ubuntu";
+	overflow-x: hidden;
+}
+
+.body {
+   @media (min-width: 768px) {
+  		padding-top: 145px;
+    }
 }
 
 .wrapper {
 	max-width: 1460px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 2rem;
+    padding-right: 2rem;
+
+	@media (min-width: 768px) {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
 }
 
 .button {
@@ -85,3 +99,16 @@ html {
 .link:hover {
 	color: #0097ff;
 }
+
+
+	/* 'phone-xsmall': (320 / 16) * 1rem,
+	'phone-small': (425 / 16) * 1rem,
+	'phone-medium': (600 / 16) * 1rem,
+	'phone': (768 / 16) * 1rem,
+	'tablet-small': (900 / 16) * 1rem,
+	'tablet': (1024 / 16) * 1rem,
+	'desktop-small': (1200 / 16) * 1rem,
+	'desktop-medium': (1440 / 16) * 1rem,
+	'desktop-mlarge': (1600 / 16) * 1rem,
+	'desktop-large': (1800 / 16) * 1rem,
+	'desktop-xlarge': (1920 / 16) * 1rem, */

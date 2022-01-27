@@ -76,8 +76,12 @@ export default {
 
   &-inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 10%;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -86,8 +90,12 @@ export default {
 
   &-inner {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .article {
@@ -111,6 +119,11 @@ export default {
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 40px;
+  }
+
+  .article.wrapper {
+    padding-left: unset;
+    padding-right: unset;
   }
 }
 </style>

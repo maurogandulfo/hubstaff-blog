@@ -59,13 +59,22 @@ export default {
 
   &-inner {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 3fr 1fr;
+    }
   }
 }
 
 .links {
   display: flex;
+  flex-wrap: wrap;
   gap: 100px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 
   li {
     margin-bottom: 25px;

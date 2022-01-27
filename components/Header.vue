@@ -1,7 +1,7 @@
 <template>
-  <div class="header-container">
-    <header class="header">
-      <div class="header-inner">
+  <header class="header-container">
+    <div class="header">
+      <div class="header-inner wrapper">
         <img class="logo" :src="header.logo" />
 
         <div class="products link">{{ header.productDropdown }}</div>
@@ -13,11 +13,13 @@
         </div>
 
         <div class="sing-in link">{{ header.actionsDropdown }}</div>
+
+        <div class="menu-toggle">Test</div>
       </div>
-    </header>
+    </div>
 
     <SubHeader />
-  </div>
+  </header>
 </template>
 
 <script>
@@ -55,28 +57,42 @@ export default {
 
 .header-inner {
   display: grid;
-  grid-template-columns: 170px 1fr 1fr 85px;
+  grid-template-columns: repeat(2, 1fr);
   height: 70px;
   align-items: center;
-  max-width: 1460px;
-  margin-left: auto;
-  margin-right: auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 170px 1fr 1fr 85px;
+  }
 }
 
 .logo {
   max-width: 150px;
 }
+.products,
+.learn-more,
+.sing-in {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
 
 .products {
-  display: flex;
   justify-content: flex-start;
 }
 .learn-more {
-  display: flex;
   justify-content: flex-end;
 }
 
 .sing-in {
-  text-align: center;
+  justify-content: center;
+}
+
+.menu-toggle {
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 </style>

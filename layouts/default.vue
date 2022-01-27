@@ -2,14 +2,13 @@
   <div>
     <Header />
 
-    <Nuxt class="body" />
+    <main class="body">
+      <Nuxt />
+    </main>
 
     <Footer />
   </div>
 </template>
 
 <style lang="scss">
-.body {
-  padding-top: 145px;
-}
 </style>

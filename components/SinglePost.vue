@@ -65,9 +65,18 @@ export default {
 <style lang="scss" scoped>
 .featured-post {
   display: grid;
-  grid-template-columns: 6fr 3fr;
+  grid-template-columns: 1fr;
   gap: 90px;
   margin-bottom: 40px;
+
+  &.wrapper {
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 6fr 3fr;
+  }
 
   .thumbnail {
     height: 440px;
@@ -86,6 +95,8 @@ export default {
     border-bottom: solid 3px black;
     display: flex;
     flex-wrap: wrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
     & > * {
       width: 100%;

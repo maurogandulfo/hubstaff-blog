@@ -42,12 +42,14 @@ export default {
     content: "";
     display: block;
     height: 200px;
-    // left: -62%;
     position: absolute;
-    // width: 224%;
+    width: 150%;
+    left: -25%;
 
-    left: -15%;
-    width: 130%;
+    @media (min-width: 768px) {
+      width: 130%;
+      left: -15%;
+    }
   }
 
   &-inner {

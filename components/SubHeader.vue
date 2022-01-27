@@ -1,10 +1,10 @@
 <template>
-  <header
+  <div
     class="subheader"
     :class="visible ? 'visible' : ''"
     :aria-hidden="visible.toString()"
   >
-    <div class="subheader-inner">
+    <div class="subheader-inner wrapper">
       <div class="link-list">
         <ul class="link-primary">
           <li
@@ -28,7 +28,7 @@
 
       <div class="search">{{ subheader.searchButton }}</div>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -65,11 +65,16 @@ export default {
 
 <style lang="scss" scoped>
 .subheader {
+  display: none;
   background-color: white;
   border-bottom: solid 1px #e9e9e9;
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity 0.3s, transform 0.3s;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 
   &.visible {
     transform: translateY(0);
@@ -80,9 +85,6 @@ export default {
 .subheader-inner {
   display: flex;
   height: 50px;
-  max-width: 1460px;
-  margin-left: auto;
-  margin-right: auto;
   justify-content: space-between;
   align-items: center;
 }
