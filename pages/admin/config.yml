@@ -6,7 +6,6 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-local_backend: true
 
 collections:
   - label: "Configuration"
