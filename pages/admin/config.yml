@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: maurogandulfo/hubstaff-blog
   branch: master
   site_domain: wonderful-bassi-1f810e.netlify.com
