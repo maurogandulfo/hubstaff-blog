@@ -18,9 +18,7 @@ jobs:
     
     - name: Init new repo in dist folder and commit generated files
       run: |
-        ls -a . && ls -a dist/admin
-        mkdir dist/admin && mv pages/admin/* dist/admin/ 
-        mv pages/admin dist
+        cp pages/admin dist 
         cd dist 
         git init
         git add -A
