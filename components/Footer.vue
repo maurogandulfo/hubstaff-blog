@@ -46,7 +46,6 @@ export default {
   },
   async fetch() {
     this.footer = await this.$content("config/footer").fetch();
-    console.log(this.footer);
   },
 };
 </script>
@@ -55,7 +54,7 @@ export default {
 .footer {
   padding: 110px 0;
   background-color: #263f54;
-  color: #fff;
+  color: $light;
 
   &-inner {
     display: grid;

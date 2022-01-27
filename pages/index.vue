@@ -72,7 +72,6 @@ export default {
 }
 .featured-articles {
   background-color: #fafafa;
-  padding: 100px 0;
 
   &-inner {
     display: grid;
@@ -86,8 +85,6 @@ export default {
 }
 
 .recent-articles {
-  padding: 100px 0;
-
   &-inner {
     display: grid;
     grid-template-columns: 1fr;
@@ -114,11 +111,22 @@ export default {
 }
 .featured-articles,
 .recent-articles {
+  padding: 40px 0;
+
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
+
   .title {
-    font-size: 16px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
   }
 
   .article.wrapper {

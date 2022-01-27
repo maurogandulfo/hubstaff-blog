@@ -49,9 +49,9 @@ export default {
 }
 
 .header {
-  border-bottom: solid 1px #e9e9e9;
+  border-bottom: solid 1px $light-gray;
   z-index: 1;
-  background: white;
+  background: $light;
   position: relative;
 }
 

@@ -46,11 +46,21 @@
 }
 
 @font-face {
-    font-family: "Ubuntu";
+	font-family: "Ubuntu";
 	font-style: italic;
 	font-weight: bold;
     src: local("Ubuntu"), url(~assets/fonts/Ubuntu-BoldItalic.ttf) format("truetype");
 }
+
+// Colors
+$light: #fff;
+$dark: #2b2f33;
+$primary: #0097ff;
+
+$light-gray: #e9e9e9;
+
+$dark-blue: #253053;
+
 
 html {
     font-family: "Ubuntu";
@@ -58,7 +68,10 @@ html {
 }
 
 .body {
-   @media (min-width: 768px) {
+	color: $dark;
+  		padding-top: 70px;
+
+   	@media (min-width: 768px) {
   		padding-top: 145px;
     }
 }
@@ -67,8 +80,8 @@ html {
 	max-width: 1460px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 2rem;
-    padding-right: 2rem;
+	padding-left: 1rem;
+    padding-right: 1rem;
 
 	@media (min-width: 768px) {
 		padding-left: 4rem;
@@ -97,8 +110,9 @@ html {
 }
 
 .link:hover {
-	color: #0097ff;
+	color: $primary
 }
+
 
 
 	/* 'phone-xsmall': (320 / 16) * 1rem,

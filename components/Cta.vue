@@ -17,6 +17,7 @@ export default {
   name: "Cta",
   props: { cta: Object },
   mounted() {
+    //Fix this
     console.log(this.cta);
   },
 };
@@ -24,7 +25,8 @@ export default {
 
 <style lang="scss">
 .cta {
-  color: white;
+  overflow: hidden;
+  color: $light;
   position: relative;
   background-color: #294dff;
   min-height: 600px;
@@ -36,7 +38,7 @@ export default {
   align-items: center;
 
   &-decoration {
-    background: #fff;
+    background: $light;
     border-radius: 50%;
     top: -100px;
     content: "";
@@ -71,9 +73,9 @@ export default {
   }
 
   .button {
-    background-color: #253053;
+    background-color: $dark-blue;
     font-size: 20px;
-    color: white;
+    color: $light;
     padding: 23px 32px;
     font-weight: 700;
     border-radius: 8px;

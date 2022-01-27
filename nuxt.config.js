@@ -40,8 +40,13 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-	'@nuxt/content'
+	'@nuxt/content',
+	'@nuxtjs/style-resources'
   ],
+
+  styleResources: {
+    scss: [ '@/assets/css/global.scss' ]
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
  build: {

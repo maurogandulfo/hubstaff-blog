@@ -53,11 +53,6 @@ export default {
         day: "numeric",
       });
     },
-    getArticleExcerpt: function (articleContent) {
-      console.log(articleContent);
-      if (!articleContent) return;
-      return String(articleContent).split(".")[0];
-    },
   },
 };
 </script>
@@ -66,8 +61,8 @@ export default {
 .featured-post {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 90px;
   margin-bottom: 40px;
+  gap: 30px;
 
   &.wrapper {
     padding-left: unset;
@@ -75,12 +70,17 @@ export default {
   }
 
   @media (min-width: 768px) {
+    gap: 90px;
     grid-template-columns: 6fr 3fr;
   }
 
   .thumbnail {
-    height: 440px;
+    height: 230px;
     object-fit: cover;
+
+    @media (min-width: 768px) {
+      height: 440px;
+    }
   }
 
   .post-header {
@@ -92,11 +92,16 @@ export default {
   }
 
   .content {
-    border-bottom: solid 3px black;
+    border-bottom: solid 3px $dark;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     & > * {
       width: 100%;
@@ -104,14 +109,33 @@ export default {
   }
 
   .title {
-    font-size: 34px;
+    font-size: 24px;
     margin-bottom: 30px;
+
+    @media (min-width: 768px) {
+      font-size: 34px;
+    }
+  }
+
+  .excerpt {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 }
 
 .recent-post {
   .content {
     min-height: unset;
+  }
+
+  .title {
+    text-transform: none;
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   .article-footer {
@@ -127,11 +151,11 @@ export default {
 .content {
   min-height: 200px;
   display: grid;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
 
-  //   & > * {
-  //     width: 100%;
-  //   }
+  @media (min-width: 768px) {
+    grid-template-rows: 1fr 1.5fr 1fr;
+  }
 }
 
 .post-header {
@@ -149,14 +173,6 @@ export default {
 .title {
   font-size: 22px;
   font-weight: 600;
-  //   background-image: linear-gradient(currentColor, currentColor);
-  //   background-position: 0% 100%;
-  //   background-repeat: no-repeat;
-  //   background-size: 0% 2px;
-
-  //   &:hover {
-  //     background-size: 100% 2px;
-  //   }
 }
 
 .excerpt {

@@ -42,6 +42,8 @@ export default {
   },
   methods: {
     handleScroll: function () {
+      if (window.innerWidth <= 768) return;
+
       if (window.scrollY < this.lastPosition || window.scrollY === 0) {
         this.visible = true;
       } else {
@@ -66,8 +68,8 @@ export default {
 <style lang="scss" scoped>
 .subheader {
   display: none;
-  background-color: white;
-  border-bottom: solid 1px #e9e9e9;
+  background-color: $light;
+  border-bottom: solid 1px $light-gray;
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity 0.3s, transform 0.3s;
@@ -110,7 +112,7 @@ export default {
 
 .link-primary {
   padding-right: 15px;
-  border-right: solid 1px #e9e9e9;
+  border-right: solid 1px $light-gray;
 
   li {
     font-weight: 600;
