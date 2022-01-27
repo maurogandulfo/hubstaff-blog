@@ -33,6 +33,7 @@
 
 <script>
 export default {
+  name: "SubHeader",
   data() {
     return {
       subheader: {},

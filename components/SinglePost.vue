@@ -34,6 +34,7 @@
 
 <script>
 export default {
+  name: "SinglePost",
   props: {
     article: {},
     isFeatured: {

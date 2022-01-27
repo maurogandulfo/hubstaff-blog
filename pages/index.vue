@@ -44,7 +44,6 @@ import SinglePost from "~/components/SinglePost";
 import Cta from "~/components/Cta";
 
 export default {
-  name: "IndexPage",
   components: { SinglePost, Cta },
   data() {
     return {
@@ -59,6 +58,19 @@ export default {
 
     const { cta } = await this.$content("pages/home").fetch();
     this.cta = cta;
+  },
+  head() {
+    return {
+      title: "Hubstaff Blog",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Learn how to run a remote company more successfully, more profitable and all while having more fun. For remote startup teams, freelancers and virtual teams.",
+        },
+      ],
+    };
   },
 };
 </script>

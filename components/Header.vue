@@ -26,6 +26,7 @@
 import SubHeader from "./SubHeader";
 
 export default {
+  name: "Header",
   components: { SubHeader },
   data() {
     return {
