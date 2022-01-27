@@ -1,6 +1,6 @@
 ---
 logo: https://bloghubstaffcom.lightningbasecdn.com/wp-content/themes/hubstaff-blog/images/hubstaff-blog-fullcolor.svg
-productDropdown: Product1
+productDropdown: Product
 cta:
   url: https://blog.hubstaff.com/
   title: Learn More
