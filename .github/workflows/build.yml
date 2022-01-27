@@ -16,11 +16,9 @@ jobs:
     - run: npm i
     - run: npm run generate
     
-    - name: Add cms
-    - run: mv /pages/admin /dist
-
     - name: Init new repo in dist folder and commit generated files
       run: |
+        mv /pages/admin /dist
         cd dist 
         git init
         git add -A
