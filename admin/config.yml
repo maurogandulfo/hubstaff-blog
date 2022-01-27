@@ -1,0 +1,107 @@
+backend:
+  name: github
+  repo: maurogandulfo/hubstaff-blog
+  branch: master
+  site_domain: wonderful-bassi-1f810e.netlify.com
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - label: "Configuration"
+    name: "configuration"
+    files:
+      - label: "Header"
+        name: "header"
+        file: "content/config/header.md"
+        fields:
+          - { label: Logo, name: logo, widget: image }
+          - { label: Product Dropdown, name: productDropdown, widget: string }
+          - {
+              label: "Cta",
+              name: "cta",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Url", name: "url", widget: "string" },
+                ],
+            }
+          - { label: Actions Dropdown, name: actionsDropdown, widget: string }
+
+      - label: "Subheader"
+        name: "subheader"
+        file: "content/config/subheader.md"
+        fields:
+          - label: "Primary Links"
+            name: "primaryLinks"
+            widget: "list"
+            fields: [{ label: Link, name: link, widget: string }]
+          - label: "Secondary Links"
+            name: "secondaryLinks"
+            widget: "list"
+            fields: [{ label: Link, name: link, widget: string }]
+          - { label: "Search button", name: "searchButton", "string" }
+
+      - label: "Footer"
+        name: "footer"
+        file: "content/config/footer.md"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - {
+              label: "Cta",
+              name: "cta",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Url", name: "url", widget: "string" },
+                ],
+            }
+          - { label: Copywrite text, name: copywrite, widget: string }
+          - label: "Links sections"
+            name: "linksSections"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              [
+                { label: Section title, name: title, widget: string },
+                {
+                  label: Links,
+                  name: links,
+                  widget: list,
+                  fields: [{ label: "Link", name: "link", widget: "string" }],
+                },
+              ]
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - {
+              label: "Cta",
+              name: "cta",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Url", name: "url", widget: "string" },
+                  { label: "Content", name: "body", widget: "markdown" },
+                ],
+            }
+
+  - label: "Articles"
+    name: "articles"
+    label_singular: "article"
+    folder: "content/articles"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Estimated Time", name: "estimatedTime", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Excerpt", name: "shortExcerpt", widget: "text" }
+      - { label: "Content", name: "body", widget: "markdown" }
