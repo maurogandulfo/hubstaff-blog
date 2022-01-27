@@ -1,26 +1,31 @@
 <template>
-  <article class="article">
-    <img
-      class="thumbnail"
-      :src="require(`~/assets/images/${article.thumbnail}.png`)"
-    />
+  <article
+    class="article"
+    :class="
+      isFeatured
+        ? 'featured-post wrapper'
+        : '' + isRecent
+        ? 'recent-post wrapper'
+        : ''
+    "
+  >
+    <img class="thumbnail" :src="article.thumbnail" />
 
     <div class="content">
-      <p class="category">{{ article.category }}</p>
+      <div class="post-header">
+        <p class="category">{{ article.category }}</p>
+        <p v-if="isFeatured">{{ getFormatedDate(article.date) }}</p>
+      </div>
+
       <h3 class="title">
         {{ article.title }}
       </h3>
 
+      <p v-if="isFeatured" class="excerpt">
+        {{ article.shortExcerpt }}
+      </p>
+
       <div class="article-footer">
-        <p>
-          {{
-            new Date(article.date).toLocaleDateString("en-us", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })
-          }}
-        </p>
         <p>{{ article.estimatedTime }} read</p>
       </div>
     </div>
@@ -30,12 +35,79 @@
 <script>
 export default {
   props: {
-    article: Object,
+    article: {},
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
+    isRecent: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    getFormatedDate: function (date) {
+      return new Date(date).toLocaleDateString("en-us", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    },
+    getArticleExcerpt: function (articleContent) {
+      console.log(articleContent);
+      if (!articleContent) return;
+      return String(articleContent).split(".")[0];
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.featured-post {
+  display: grid;
+  grid-template-columns: 6fr 3fr;
+  gap: 90px;
+  margin-bottom: 40px;
+
+  .thumbnail {
+    height: 440px;
+    object-fit: cover;
+  }
+
+  .post-header {
+    margin-bottom: 20px;
+
+    .category {
+      margin-bottom: 0;
+    }
+  }
+
+  .content {
+    border-bottom: solid 3px black;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  .title {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+}
+
+.recent-post {
+  .content {
+    min-height: unset;
+  }
+
+  .article-footer {
+    margin-bottom: 0;
+  }
+}
+
 .thumbnail {
   width: 100%;
   margin-bottom: 10px;
@@ -51,6 +123,12 @@ export default {
   //   }
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .category {
   font-size: 12px;
   text-transform: uppercase;
@@ -60,11 +138,27 @@ export default {
 .title {
   font-size: 22px;
   font-weight: 600;
+  //   background-image: linear-gradient(currentColor, currentColor);
+  //   background-position: 0% 100%;
+  //   background-repeat: no-repeat;
+  //   background-size: 0% 2px;
+
+  //   &:hover {
+  //     background-size: 100% 2px;
+  //   }
+}
+
+.excerpt {
+  font-size: 18px;
+  line-height: 1.45;
+  margin-bottom: 20px;
 }
 
 .article-footer {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 12px;
 }
 </style>

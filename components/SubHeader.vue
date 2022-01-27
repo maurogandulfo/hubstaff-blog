@@ -7,18 +7,26 @@
     <div class="subheader-inner">
       <div class="link-list">
         <ul class="link-primary">
-          <li>Remote</li>
-          <li>Project Management</li>
-          <li>Field Services</li>
+          <li
+            v-for="(link, index) in subheader.primaryLinks"
+            :key="index"
+            class="link"
+          >
+            {{ link.link }}
+          </li>
         </ul>
         <ul class="link-secondary">
-          <li>Productivity</li>
-          <li>Time Management</li>
-          <li>Tools</li>
+          <li
+            v-for="(link, index) in subheader.secondaryLinks"
+            :key="index"
+            class="link"
+          >
+            {{ link.link }}
+          </li>
         </ul>
       </div>
 
-      <div class="search">Search</div>
+      <div class="search">{{ subheader.searchButton }}</div>
     </div>
   </header>
 </template>
@@ -27,22 +35,28 @@
 export default {
   data() {
     return {
+      subheader: {},
       visible: true,
+      lastPosition: 0,
     };
   },
   methods: {
     handleScroll: function () {
-      if (window.scrollY === 0) {
+      if (window.scrollY < this.lastPosition || window.scrollY === 0) {
         this.visible = true;
-        return;
+      } else {
+        this.visible = false;
       }
-      this.visible = false;
+
+      this.lastPosition = window.scrollY;
     },
+  },
+  async fetch() {
+    this.subheader = await this.$content("config/subheader").fetch();
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
-
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   },
@@ -89,11 +103,6 @@ export default {
     display: flex;
     align-items: center;
     height: 100%;
-    cursor: pointer;
-
-    &:hover {
-      color: #0097ff;
-    }
   }
 }
 
