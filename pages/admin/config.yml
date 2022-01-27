@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   repo: maurogandulfo/hubstaff-blog
   branch: master
+  site_domain: wonderful-bassi-1f810e.netlify.com
 
 media_folder: static/img
 public_folder: /img
