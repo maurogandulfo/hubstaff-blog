@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
-  # repo: maurogandulfo/hubstaff-blog
-  # branch: main
+  repo: maurogandulfo/hubstaff-blog
+  branch: master
 
 media_folder: static/img
 public_folder: /img
