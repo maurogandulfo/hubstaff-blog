@@ -65,14 +65,19 @@ export default {
   margin-bottom: 40px;
   gap: 30px;
 
-  &.wrapper {
-    padding-left: unset;
-    padding-right: unset;
-  }
-
   @media (min-width: 1024px) {
     gap: 90px;
     grid-template-columns: 6fr 3fr;
+  }
+
+  &.wrapper {
+    padding-left: unset;
+    padding-right: unset;
+
+    @media (min-width: 1024px) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
   }
 
   .thumbnail {

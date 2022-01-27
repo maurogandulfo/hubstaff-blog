@@ -82,6 +82,7 @@ export default {
   display: flex;
   align-items: center;
 }
+
 .featured-articles {
   background-color: #fafafa;
 
