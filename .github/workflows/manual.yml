@@ -9,12 +9,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install packaged
-      run: npm i
-    - name: Build site
-      run: npm run generate
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run generate
