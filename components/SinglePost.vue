@@ -9,12 +9,12 @@
         : ''
     "
   >
-    <img class="thumbnail" :src="article.thumbnail" />
+    <img class="thumbnail" :alt="article.title" :src="article.thumbnail" />
 
     <div class="content">
       <div class="post-header">
         <p class="category">{{ article.category }}</p>
-        <p v-if="isFeatured">{{ getFormatedDate(article.date) }}</p>
+        <p class="date" v-if="isFeatured">Date</p>
       </div>
 
       <h3 class="title">
@@ -70,7 +70,7 @@ export default {
     padding-right: unset;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     gap: 90px;
     grid-template-columns: 6fr 3fr;
   }
@@ -79,13 +79,15 @@ export default {
     height: 230px;
     object-fit: cover;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       height: 440px;
     }
   }
 
   .post-header {
     margin-bottom: 20px;
+    justify-content: flex-start;
+    gap: 20px;
 
     .category {
       margin-bottom: 0;
@@ -99,7 +101,7 @@ export default {
     padding-left: 1rem;
     padding-right: 1rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -113,7 +115,7 @@ export default {
     font-size: 24px;
     margin-bottom: 30px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       font-size: 34px;
     }
   }
@@ -121,7 +123,7 @@ export default {
   .excerpt {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: block;
     }
   }
@@ -134,7 +136,7 @@ export default {
 
   .title {
     text-transform: none;
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       font-size: 24px;
     }
   }
@@ -154,7 +156,7 @@ export default {
   display: grid;
   grid-template-rows: 0.5fr 2fr 0.5fr;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-template-rows: 1fr 1.5fr 1fr;
   }
 }
@@ -165,7 +167,8 @@ export default {
   margin-bottom: 20px;
 }
 
-.category {
+.category,
+.date {
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 20px;

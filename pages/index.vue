@@ -88,10 +88,11 @@ export default {
   &-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10%;
+    gap: 30px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 10%;
     }
   }
 }
@@ -102,7 +103,7 @@ export default {
     grid-template-columns: 1fr;
     gap: 20px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -125,7 +126,7 @@ export default {
 .recent-articles {
   padding: 40px 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     padding: 100px 0;
   }
 
@@ -135,13 +136,14 @@ export default {
     font-weight: bold;
     margin-bottom: 20px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       font-size: 16px;
       margin-bottom: 40px;
     }
   }
 
   .article.wrapper {
+    width: 100%;
     padding-left: unset;
     padding-right: unset;
   }

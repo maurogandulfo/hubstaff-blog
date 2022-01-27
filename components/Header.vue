@@ -2,7 +2,7 @@
   <header class="header-container">
     <div class="header">
       <div class="header-inner wrapper">
-        <img class="logo" :src="header.logo" />
+        <img class="logo" alt="hubstaff-logo" :src="header.logo" />
 
         <div class="products link">{{ header.productDropdown }}</div>
 
@@ -14,7 +14,7 @@
 
         <div class="sing-in link">{{ header.actionsDropdown }}</div>
 
-        <div class="menu-toggle">Test</div>
+        <div class="menu-toggle">Menu Icon</div>
       </div>
     </div>
 
@@ -62,7 +62,7 @@ export default {
   height: 70px;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-template-columns: 170px 1fr 1fr 85px;
   }
 }
@@ -75,7 +75,7 @@ export default {
 .sing-in {
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: flex;
   }
 }
@@ -92,7 +92,10 @@ export default {
 }
 
 .menu-toggle {
-  @media (min-width: 768px) {
+  display: flex;
+  justify-content: flex-end;
+
+  @media (min-width: 1024px) {
     display: none;
   }
 }

@@ -26,9 +26,8 @@
         <button class="button button--primary">{{ footer.cta.title }}</button>
 
         <div class="extra-info">
-          <!-- <img class="logo" src="~assets/images/hubstaff-blog-fullcolor.svg" /> -->
           <p class="copywrite">{{ footer.copywrite }}</p>
-          <div class="social-media">Facebook</div>
+          <div class="social-media">Icons</div>
         </div>
       </div>
     </div>
@@ -60,8 +59,8 @@ export default {
   &-inner {
     display: grid;
     grid-template-columns: 1fr;
-
-    @media (min-width: 768px) {
+    gap: 30px;
+    @media (min-width: 1024px) {
       grid-template-columns: 3fr 1fr;
     }
   }
@@ -70,9 +69,10 @@ export default {
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
+    gap: 100px;
     flex-direction: row;
   }
 
@@ -92,6 +92,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 250px;
 
   .title {
     font-size: 26px;

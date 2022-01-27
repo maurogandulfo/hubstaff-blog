@@ -75,7 +75,7 @@ export default {
   transform: translateY(-100%);
   transition: opacity 0.3s, transform 0.3s;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: block;
   }
 
